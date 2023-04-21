@@ -1,26 +1,24 @@
 import { url } from "inspector";
 import Image from "next/image";
 import Link from "next/link";
+import background from "../public/background.png";
+import image_1 from "../public/img_1.png";
+import image_2 from "../public/img_2.png";
+import image_3 from "../public/img_3.png";
+import image_4 from "../public/img_4.png";
 
 export default function Home() {
   return (
-    <div className="body ">
+    <div>
       <div
-        // background Image
-        style={{
-          backgroundImage:
-            " linear-gradient(105deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 39%),url(/background.png)",
-          width: "100%",
-          height: "45rem",
-          backgroundSize: "cover",
-          zIndex: "-20",
-          position: "absolute",
-          overflow: "hidden",
-          minHeight: "48rem",
-          maxHeight: "48rem",
-        }}
-        className="bg-center"
-      ></div>
+      //////////////////////////////////////////// background //////////
+      >
+        <Image
+          src={background}
+          alt="background image"
+          className="absolute w-full h-full -z-10"
+        ></Image>
+      </div>
       <header className="flex p-5 justify-between w-auto flex-wrap ">
         <div // Logo
           className="md:w-16"
@@ -78,9 +76,12 @@ export default function Home() {
             Sign In
           </Link>
         </div>
-      </header>
-      {/* linear-gradient(103.24deg, rgba(0, 8, 29, 0.9) 23.83%, rgba(0, 8, 29, 0.3) 96.1%)*/}
-      <div className="ml-5 mt-12 space-y-4 flex flex-col  ">
+      </header>{" "}
+      ?
+      <div ////////////////////////////Features ////////////////////////////////////////
+        //////////////////
+        className="ml-5 mt-12 space-y-4 flex flex-col  "
+      >
         <h1 className="text-neutral-50 text-4xl">
           Unlimited Movies,TV Shows and more.
         </h1>
@@ -90,10 +91,67 @@ export default function Home() {
         </h3>
         <form>
           <input className="p-1 rounded-sm" placeholder="Email Address"></input>
-          <button className="text-neutral-100 bg-orange-700 rounded-sm ml-1 p-1">
+          <button className="text-neutral-100 bg-orange-700 rounded-sm ml-5 p-1">
             Get Started &#62;
           </button>
         </form>
+      </div>
+      <div
+        // Panel controller here >>>>>>>>>>>>>>>>>>>>>>
+
+        className="inline-flex flex-wrap px-20  pt-8 text-neutral-50 mt-24 justify-center w-full bg-black"
+      >
+        <div
+          // panels starts here >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+          style={{
+            background:
+              "radial-gradient(99.93% 134.44% at 17.93% 0%, #09143C 0%, #101338 57.21%, #400E20 99.57%)",
+          }}
+          className="flex flex-col sm:w-96 sm:h-96 justify-center text-center mt-2 ml-2"
+        >
+          <Image src={image_1} alt="img_1" />
+          Enjoy on your TV. Watch on smart TVs,PlayStation,Xbox,Apple TV.
+        </div>
+        <div
+          style={{
+            background:
+              "radial-gradient(99.93% 134.44% at 17.93% 0%, #09143C 0%, #101338 57.21%, #400E20 99.57%)",
+          }}
+          className="flex flex-col sm:w-96 sm:h-96 mt-2 ml-2 justify-center text-center"
+        >
+          <Image src={image_2} alt="img_2" />
+          Watch everywhere.
+        </div>
+        <div
+          style={{
+            background:
+              "radial-gradient(99.93% 134.44% at 17.93% 0%, #09143C 0%, #101338 57.21%, #400E20 99.57%)",
+          }}
+          className="flex flex-col sm:w-96 sm:h-96 ml-2 justify-center text-center mt-2"
+        >
+          <Image src={image_3} alt="img_3" />
+          Create profiles for children.
+        </div>
+        <div
+          style={{
+            background:
+              "radial-gradient(99.93% 134.44% at 17.93% 0%, #09143C 0%, #101338 57.21%, #400E20 99.57%)",
+          }}
+          className="flex flex-col sm:w-96  sm:h-96 ml-2 justify-center text-center mt-2"
+        >
+          <Image src={image_4} alt="img_4" />
+          Download your shows to watch offline.
+        </div>
+      </div>
+      <div ////////////////// question slider/////////////
+      >
+        <h1 className="bg-black relative ">Frequently Asked Questions</h1>
+        <div>
+          <div className="flex justify-center bg-black 1">
+            <h1 className="bg-black text-neutral-100">Netflix Clone </h1>
+          </div>
+        </div>
       </div>
     </div>
   );
