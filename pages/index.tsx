@@ -149,7 +149,7 @@ export default function Home() {
         <h1 className="bg-black relative ">Frequently Asked Questions</h1>
         <div>
           <div className="flex justify-center bg-black 1">
-            <h1 className="bg-black text-neutral-100">Netflix Clone </h1>
+            <h1 className="bg-black text-neutral-100"> </h1>
           </div>
         </div>
       </div>
