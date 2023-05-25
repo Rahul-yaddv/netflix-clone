@@ -1,5 +1,5 @@
 import { apiHeaders, configApi } from '@/components/Headers';
-import popularMovieHelper from '@/components/Movie/PopularMovie';
+import popularMovieHelper from '@/components/Movie/popularMovie';
 import { propsType } from '@/commonTypes';
 export default function GuestLogin(props: propsType) {
   const { popularMovie } = props;
