@@ -1,3 +1,5 @@
+import { optionsType, popularMovieType } from '@/commonTypes';
+
 export default async function popularMovieHelper(
   options: optionsType
 ): Promise<popularMovieType> {
@@ -10,5 +12,3 @@ export default async function popularMovieHelper(
 
   return popularMovie;
 }
-
-import { optionsType, popularMovieType } from '@/commonTypes';
