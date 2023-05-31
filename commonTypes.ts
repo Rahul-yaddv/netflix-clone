@@ -1,8 +1,10 @@
+//---------------------- Headers.tsx types --------------
 export interface optionsType {
   method: string;
   headers: Headers;
 }
 
+// ------------------popularMovie function types -------------
 export interface popularMovieType {
   results: {
     original_title: string;
@@ -10,12 +12,17 @@ export interface popularMovieType {
     runtime: number;
     id: number;
     genre_ids: number[];
+    genre_name: string[];
   }[];
 }
 
-export interface genresType {
+// ----------------------------genreType types --------------
+
+export interface genresPromise {
   genres: { id: number; name: string }[];
 }
+
+export type genresType = { id: number; name: string }[];
 
 export interface propsType {
   popularMovie: {
@@ -31,8 +38,4 @@ export interface propsType {
   };
   genresData: { genres: { id: number; name: string }[] };
   config: {};
-}
-
-export interface genresType {
-  genres: { id: number; name: string }[];
 }

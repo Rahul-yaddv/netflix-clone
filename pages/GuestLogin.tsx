@@ -1,6 +1,7 @@
 import { apiHeaders, configApi } from '@/components/Headers';
-import popularMovieHelper from '@/components/Movie/popularMovie';
+import popularMovieFetch from '@/components/Movie/popularMovie';
 import { propsType } from '@/commonTypes';
+import { GenreFetch } from '@/components/Movie/genreOptions';
 export default function GuestLogin(props: propsType) {
   const { popularMovie } = props;
 
@@ -31,7 +32,7 @@ export default function GuestLogin(props: propsType) {
         </div>
       </header>
       <div>
-        <div className=''>
+        {/* <div className=''>
           {popularMovie.results.slice(0, 10).map(movie => {
             return (
               <h1 key={movie.id}>
@@ -43,7 +44,7 @@ export default function GuestLogin(props: propsType) {
             );
             8;
           })}
-        </div>
+        </div> */}
       </div>
     </div>
   );
@@ -53,23 +54,13 @@ export const getStaticProps = async () => {
   const apiKey = process.env.REACT_APP_TMDB_ACCESS_TOKEN;
   const options = apiHeaders(apiKey);
   const config = await configApi(options);
-  const popularMovieList = await popularMovieHelper(options);
+  const genre = await GenreFetch(options);
+  popularMovieFetch(options, genre);
+  // const popularMovieList = await popularMovieFetch(options, genre);
 
-  // const { genres }: genres = await genreData.json();
-
-  // const genrePopular = popularMovie.results.map(movie => movie.genre_ids);
-
-  // const finalPopularGenre = genrePopular.map(pop => {
-  //   return pop.map(id => {
-  //     const matchedId = genres.find(item => item.id === id);
-  //     return matchedId ? matchedId.name : null;
-  //   });
-  // });
-
-  // console.log(finalPopularGenre);
   return {
     props: {
-      popularMovie: popularMovieList,
+      popularMovie: '',
     },
   };
 };
