@@ -1,4 +1,4 @@
-import { optionsType } from '@/commonTypes';
+import { optionsType, configType } from '@/commonTypes';
 
 const apiHeaders = (apiKey: string | undefined) => {
   const headers = new Headers();
@@ -12,12 +12,13 @@ const apiHeaders = (apiKey: string | undefined) => {
   return options;
 };
 export const configApi = async (options: optionsType) => {
-  const configData = await fetch(
+  const configFetch = await fetch(
     'https://api.themoviedb.org/3/configuration',
     options
   );
-  const config = await configData.json();
-  return config;
+  const { images }: { images: configType } = await configFetch.json();
+
+  return images;
 };
 
 export { apiHeaders };

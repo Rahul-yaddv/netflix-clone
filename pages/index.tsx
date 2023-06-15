@@ -16,7 +16,7 @@ export default function Home() {
         <Image
           src={background}
           alt='background image'
-          className='absolute w-full h-full -z-10'
+          className='absolute w-full h-full -z-10  '
         ></Image>
       </div>
       <header className='flex p-5 justify-between w-auto flex-wrap '>
@@ -89,9 +89,12 @@ export default function Home() {
         </h3>
         <form>
           <input className='p-1 rounded-sm' placeholder='Email Address'></input>
-          <button className='text-neutral-100 bg-orange-700 rounded-sm ml-5 p-1'>
-            Get Started &#62;
-          </button>
+          <Link // SignIn Link
+            href={'/login'}
+            className='border-black text-neutral-100 bg-red-600 px-2 pb-1 rounded-sm ml-2 hover:duration-500 hover:bg-red-700'
+          >
+            Get Started
+          </Link>
         </form>
       </div>
       <div

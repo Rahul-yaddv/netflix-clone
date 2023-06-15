@@ -6,6 +6,7 @@ export const GenreFetch = async (options: optionsType): Promise<genresType> => {
     options
   );
   const { genres }: { genres: genresType } = await genreData.json();
+
   return genres;
 };
 
