@@ -8,8 +8,7 @@ import PageHeader from '../PageHeader';
 function MovieSlider(props: propsType) {
   const { popularMovie, movieImages } = props;
   const sliderData = popularMovie.slice(0, 10);
-  console.log(sliderData);
-  const imageFinal = movieImages.base_url + movieImages.poster_sizes[6];
+  const imageFinal = movieImages.secure_base_url + movieImages.poster_sizes[6];
   var settings = {
     dots: true,
     infinite: true,
@@ -40,9 +39,10 @@ function MovieSlider(props: propsType) {
                 <div className='w-full block ml-8 text-white'>
                   <span className='text-'>{movie.runtime}</span>
                   <span>
-                    {movie.genres?.map(genre => (
+                    {movie.genres?.join(' ')}
+                    {/* {movie.genres?.map(genre => (
                       <span key={movie.id}>{genre} </span>
-                    ))}
+                    ))} */}
                   </span>
                   <span>⭐{movie.vote_average}</span>
                   <span>

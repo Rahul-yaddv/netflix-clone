@@ -7,6 +7,7 @@ export interface optionsType {
 export interface configType {
   images: {
     base_url: string;
+    secure_base_url: string;
     backdrop_sizes: string[];
     poster_sizes: string[];
   };
